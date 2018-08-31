@@ -56589,7 +56589,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
-        reserved: function reserved() {
+        onReserved: function onReserved() {
             var _this = this;
 
             axios.post('/api/reserve/', {
@@ -56736,7 +56736,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("span", { staticClass: "error" }, [_vm._v(_vm._s(_vm.error))])
+  return _c("span", { staticClass: "error" }, [_vm._v(_vm._s(_vm.err))])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -56814,7 +56814,7 @@ var render = function() {
             on: {
               submit: function($event) {
                 $event.preventDefault()
-                return _vm.reserved($event)
+                return _vm.onReserved($event)
               }
             }
           },
@@ -57117,97 +57117,109 @@ var render = function() {
       _c("div", [
         _c("h4", [_vm._v("Register")]),
         _vm._v(" "),
-        _c("form", { staticClass: "d-flex flex-column" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.name,
-                expression: "form.name"
-              }
-            ],
-            staticClass: "my-2",
-            attrs: { type: "text", placeholder: "Name" },
-            domProps: { value: _vm.form.name },
+        _c(
+          "form",
+          {
+            staticClass: "d-flex flex-column",
             on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.form, "name", $event.target.value)
+              submit: function($event) {
+                $event.preventDefault()
+                return _vm.onRegister($event)
               }
             }
-          }),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.email,
-                expression: "form.email"
-              }
-            ],
-            staticClass: "my-2",
-            attrs: { type: "email", placeholder: "Email" },
-            domProps: { value: _vm.form.email },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          },
+          [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.name,
+                  expression: "form.name"
                 }
-                _vm.$set(_vm.form, "email", $event.target.value)
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.password,
-                expression: "form.password"
-              }
-            ],
-            staticClass: "my-2",
-            attrs: { type: "password", placeholder: "Password" },
-            domProps: { value: _vm.form.password },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+              ],
+              staticClass: "my-2",
+              attrs: { type: "text", placeholder: "Name" },
+              domProps: { value: _vm.form.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "name", $event.target.value)
                 }
-                _vm.$set(_vm.form, "password", $event.target.value)
               }
-            }
-          }),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.form.password_confirm,
-                expression: "form.password_confirm"
-              }
-            ],
-            staticClass: "my-2",
-            attrs: { type: "password", placeholder: "Confirm password" },
-            domProps: { value: _vm.form.password_confirm },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.email,
+                  expression: "form.email"
                 }
-                _vm.$set(_vm.form, "password_confirm", $event.target.value)
+              ],
+              staticClass: "my-2",
+              attrs: { type: "email", placeholder: "Email" },
+              domProps: { value: _vm.form.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "email", $event.target.value)
+                }
               }
-            }
-          }),
-          _vm._v(" "),
-          _c("button", { staticClass: "w-50 my-2" }, [_vm._v("SUBMIT")])
-        ])
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.password,
+                  expression: "form.password"
+                }
+              ],
+              staticClass: "my-2",
+              attrs: { type: "password", placeholder: "Password" },
+              domProps: { value: _vm.form.password },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "password", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.form.password_confirm,
+                  expression: "form.password_confirm"
+                }
+              ],
+              staticClass: "my-2",
+              attrs: { type: "password", placeholder: "Confirm password" },
+              domProps: { value: _vm.form.password_confirm },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.form, "password_confirm", $event.target.value)
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("button", { staticClass: "w-50 my-2" }, [_vm._v("SUBMIT")])
+          ]
+        )
       ])
     ])
   ])
@@ -57404,8 +57416,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 email: '',
                 password: '',
                 password_confirm: ''
-            }
+            },
+            errors: {}
         };
+    },
+
+    methods: {
+        onRegister: function onRegister() {
+            axios.post('/api/register/', this.form).then(function (response) {
+                console.log(response.data);
+            }).catch(function (error) {
+                // this.errors = error.response.data.errors;
+                console.log(error.message);
+            });
+        }
     }
 });
 

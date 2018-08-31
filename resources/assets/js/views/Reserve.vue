@@ -34,7 +34,7 @@
 
             <div class="col">
                 <h4>Reservation Form</h4>
-                <form @submit.prevent="reserved" class="d-flex flex-column">
+                <form @submit.prevent="onReserved" class="d-flex flex-column">
                     <div class="alert alert-success" v-if="success">Message send</div>
                     <input class="my-2" type="text" placeholder="Name" v-model="name">
                     <template v-if="errors.error">
@@ -87,7 +87,7 @@
             }
         },
         methods:{
-            reserved(){
+            onReserved(){
                 axios.post('/api/reserve/', {
                     name: this.name,
                     email: this.email,

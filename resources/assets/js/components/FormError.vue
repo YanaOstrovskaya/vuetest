@@ -1,5 +1,5 @@
 <template>
-    <span class="error">{{error}}</span>
+    <span class="error">{{err}}</span>
 </template>
 <script>
     export default {

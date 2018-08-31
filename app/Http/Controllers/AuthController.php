@@ -21,9 +21,9 @@ class AuthController extends Controller
             'password'=>'required|between:6,25|confirmed'
         ]);
 
-        $user = new User($request->all());
-        $user->password = bcrypt($request->password);
-        $user->save();
+//        $user = new User($request->all());
+//        $user->password = bcrypt($request->password);
+//        $user->save();
 
         return response()->json([
            'success'=>true

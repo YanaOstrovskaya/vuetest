@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div>
                 <h4>Register</h4>
-                <form class="d-flex flex-column">
+                <form class="d-flex flex-column" @submit.prevent="onRegister">
 
                     <input class="my-2" type="text" placeholder="Name" v-model="form.name">
 
@@ -33,12 +33,26 @@
     export default{
         data(){
             return{
-                form:{
-                    name:'',
-                    email:'',
-                    password:'',
-                    password_confirm:''
-                }
+                form:
+                    {
+                        name:'',
+                        email:'',
+                        password:'',
+                        password_confirm:''
+                    },
+                errors:{}
+            }
+        },
+        methods:{
+            onRegister(){
+                axios.post('/api/register/', this.form)
+                    .then((response) =>{
+                        console.log(response.data);
+                    })
+                    .catch( (error) => {
+                   // this.errors = error.response.data.errors;
+                    console.log(error.message);
+                });
             }
         }
     }
