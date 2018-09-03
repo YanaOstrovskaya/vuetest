@@ -2,7 +2,7 @@
     <section class="sectionSeven">
         <div class="row head justify-content-center">
             <div class="col-md-12">
-                <img src="../../images/register.png" alt="Coffee">
+                <img src="../../images/register.png" alt="Register">
                 <h2>Register</h2>
                 <hr>
                 <p class="text">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
@@ -14,14 +14,22 @@
                 <h4>Register</h4>
                 <form class="d-flex flex-column" @submit.prevent="onRegister">
 
-                    <input class="my-2" type="text" placeholder="Name" v-model="form.name">
-
-                    <input class="my-2" type="email" placeholder="Email" v-model="form.email">
-
-                    <input class="my-2" type="password" placeholder="Password" v-model="form.password" >
-
-                    <input class="my-2" type="password" placeholder="Confirm password" v-model="form.password_confirm" >
-
+                    <input class="my-2" type="text" placeholder="Name *" v-model="form.name">
+                    <template v-if="errors.error">
+                        <form-error :error="errors.error.name"></form-error>
+                    </template>
+                    <input class="my-2" type="text" placeholder="Email *" v-model="form.email">
+                    <template v-if="errors.error">
+                        <form-error :error="errors.error.email"></form-error>
+                    </template>
+                    <input class="my-2" type="password" placeholder="Password *" v-model="form.password" >
+                    <template v-if="errors.error">
+                        <form-error :error="errors.error.password"></form-error>
+                    </template>
+                    <input class="my-2" type="password" placeholder="Confirm password *" v-model="form.password_confirmation" >
+                    <template v-if="errors.error">
+                        <form-error :error="errors.error.password_confirmation"></form-error>
+                    </template>
                     <button class="w-50 my-2">SUBMIT</button>
                 </form>
             </div>
@@ -30,7 +38,12 @@
 </template>
 
 <script>
+    import FormError from '../components/FormError';
+    import {mapState} from 'vuex';
     export default{
+        components: {
+            FormError
+        },
         data(){
             return{
                 form:
@@ -38,20 +51,28 @@
                         name:'',
                         email:'',
                         password:'',
-                        password_confirm:''
+                        password_confirmation:''
                     },
-                errors:{}
+                errors:[]
             }
         },
         methods:{
             onRegister(){
-                axios.post('/api/register/', this.form)
+                axios.post('/api/register', this.form)
                     .then((response) =>{
-                        console.log(response.data);
+                        this.$set(this.errors, 'error', []);
+                        this.form.name = '';
+                        this.form.email = '';
+                        this.form.password = '';
+                        this.form.password_confirmation = '';
+                        if(response.data.success){
+                            this.$router.push('/');
+                        }
+                        //console.log(response.data);
                     })
                     .catch( (error) => {
-                   // this.errors = error.response.data.errors;
-                    console.log(error.message);
+                        this.$set(this.errors, 'error', error.response.data.errors);
+                        //console.log(this.errors.error);
                 });
             }
         }

@@ -21,13 +21,14 @@ class AuthController extends Controller
             'password'=>'required|between:6,25|confirmed'
         ]);
 
-//        $user = new User($request->all());
-//        $user->password = bcrypt($request->password);
-//        $user->save();
+        $user = new User($request->all());
+        $user->password = bcrypt($request->password);
+        $user->save();
 
         return response()->json([
            'success'=>true
         ]);
+        return response()->json($request);
 
     }
 
@@ -61,7 +62,7 @@ class AuthController extends Controller
 
 public function logout(Request $request){
         $user = $request->user();
-        $user-api_token = null;
+        $user->api_token = null;
         $user->save();
 
         return response()->json([

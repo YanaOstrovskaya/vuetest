@@ -88,7 +88,7 @@
         },
         methods:{
             onReserved(){
-                axios.post('/api/reserve/', {
+                axios.post('/api/reserve', {
                     name: this.name,
                     email: this.email,
                     event: this.event,
