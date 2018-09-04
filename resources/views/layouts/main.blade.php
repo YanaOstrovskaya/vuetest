@@ -15,8 +15,8 @@
 </head>
 <body>
 <div class="container" id="app">
-        @include('layouts.header')
-
+        {{--@include('layouts.header')--}}
+<app-header></app-header>
         <main>
             <transition name="fade">
              <router-view></router-view>

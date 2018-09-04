@@ -17,11 +17,14 @@ window.Vue = require('vue');
 
 
 
-
+import AppHeader from './views/Header';
 import {router} from './routes.js';
 import {store} from './store/'
 const app = new Vue({
     el: '#app',
     router,
     store,
+    components: {
+        AppHeader
+    }
 });
