@@ -31,6 +31,8 @@
 
 <script>
     import FormError from '../components/FormError';
+    import Auth from '../helpers/Auth';
+
     export default{
         components: {
             FormError
@@ -49,13 +51,15 @@
             onLogin(){
                 axios.post('/api/login', this.form)
                     .then((response) =>{
-                        this.$set(this.errors, 'error', []);
-                        this.form.email = '';
-                        this.form.password = '';
                         if(response.data.success){
+                            Auth.login(response.data);
+                            this.$store.commit('user/Login');
+                            // localStorage.setItem('user_id', response.data.user_id);
+                            // localStorage.setItem('api_token', response.data.api_token);
+                            // localStorage.setItem('name', response.data.name);
                             this.$router.push('/');
                         }
-                        console.log(response.data);
+                        //console.log(response.data.api_token);
                     })
                     .catch( (error) => {
                         this.$set(this.errors, 'error', error.response.data.errors);

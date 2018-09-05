@@ -18,6 +18,7 @@ window.Vue = require('vue');
 
 
 import AppHeader from './views/Header';
+import AppFooter from './views/Footer';
 import {router} from './routes.js';
 import {store} from './store/'
 const app = new Vue({
@@ -25,6 +26,7 @@ const app = new Vue({
     router,
     store,
     components: {
-        AppHeader
+        AppHeader,
+        AppFooter
     }
 });

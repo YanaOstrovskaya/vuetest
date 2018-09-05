@@ -3,14 +3,14 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-// import menu from './modules/menu';
-// import products from './modules/products';
+import user from './modules/user';
+import menu from './modules/menu';
 // import cart from './modules/cart';
 
 export const store = new Vuex.Store({
     modules: {
-        // menu,
-        // products,
+        user,
+         menu,
         // cart
     },
     strict: process.env.NODE_ENV !== 'production'

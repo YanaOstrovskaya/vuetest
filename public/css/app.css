@@ -10491,46 +10491,6 @@ body {
           box-sizing: border-box;
 }
 
-nav > div {
-  border: 2px solid gainsboro;
-}
-
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-align: center;
-  margin: 0 100px;
-  font-family: 'Spectral', serif;
-  font-size: 150%;
-}
-
-nav ul li {
-  display: inline;
-  padding: 10px;
-  line-height: 170%;
-}
-
-nav ul li a {
-  font-size: 20px;
-  text-decoration: none;
-  color: black;
-  vertical-align: middle;
-}
-
-nav ul li .logo {
-  font-size: 36px;
-  font-style: italic;
-}
-
-nav ul li a:hover {
-  text-decoration: none;
-  color: coral;
-}
-
 footer {
   padding: 5% 0;
   background: black;

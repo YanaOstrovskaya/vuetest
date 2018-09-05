@@ -20,12 +20,16 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-import Vue from 'vue'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPhone, faEnvelope, faHome, faGlobe  } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Vue from 'vue';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPhone, faEnvelope, faHome, faGlobe, faSignOutAlt  } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faHome, faPhone, faEnvelope, faGlobe);
+
+import VueCookies from 'vue-cookies';
+Vue.use(VueCookies);
+
+library.add(faHome, faPhone, faEnvelope, faGlobe, faSignOutAlt);
 
 
 

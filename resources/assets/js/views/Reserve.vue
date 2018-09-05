@@ -72,6 +72,11 @@
 <script>
     import FormError from '../components/FormError';
     export default {
+        created(){
+            if(!this.$store.getters['user/auth'].login){
+                this.$router.push('/login');
+            }
+        },
         components: {
             FormError
         },
@@ -157,7 +162,6 @@
         border: 2px solid #B8B8B8;
     }
     form *{
-        /*margin: 10px;*/
         border-radius: 5px;
         font-size: 18px;
     }

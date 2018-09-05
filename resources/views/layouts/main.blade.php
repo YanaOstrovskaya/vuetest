@@ -15,16 +15,13 @@
 </head>
 <body>
 <div class="container" id="app">
-        {{--@include('layouts.header')--}}
-<app-header></app-header>
-        <main>
-            <transition name="fade">
-             <router-view></router-view>
-            </transition>
-        </main>
-
-        @include('layouts.footer')
-
+    <app-header></app-header>
+    <main>
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
+    </main>
+    <app-footer></app-footer>
 </div>
 
 

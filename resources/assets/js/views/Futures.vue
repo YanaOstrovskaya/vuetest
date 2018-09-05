@@ -84,6 +84,15 @@
 </div>
 </template>
 
+<script>
+    export default {
+        created(){
+            if(!this.$store.getters['user/auth'].login){
+                this.$router.push('/login');
+            }
+        }
+    }
+</script>
 
 <style>
 
