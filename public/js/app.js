@@ -56640,7 +56640,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n.sectionOne{\n     display: -webkit-box;\n     display: -ms-flexbox;\n     display: flex;\n}\n.sectionOne .one{\n     background-image: url(" + escape(__webpack_require__(22)) + ");\n     background-size: 100% 100%;\n}\n.sectionOne .two{\n     padding: 2% 10%;\n\n     color: white;\n     font-family: 'Spectral', serif;\n     background-image: url(" + escape(__webpack_require__(23)) + ");\n}\nhr{\n     text-align: center;\n     background: coral;\n     width: 50px;\n     height: 2px;\n}\n.sectionOne .two h3{\n     text-align: center;\n     font-style: italic;\n     font-weight: lighter;\n}\n.sectionOne .two p span{\n     font-size: 70px;\n     float: left;\n     margin-top: -13%;\n     font-style: italic;\n     padding: 0 10px;\n     margin-right: 3%;\n     -webkit-box-sizing: border-box;\n             box-sizing: border-box;\n     height: 70px;\n     color: white;\n}\n.sectionOne .two p{\n     font-size: 20px;\n     color: gray;\n}\n.center{\n     text-align: center;\n}\n.sectionOne .two button{\n     text-align: center;\n     border: 2px solid coral;\n     border-radius: 5px;\n     background: rgba(0,0,0,0);\n     color: white;\n}\n.sectionTwo{\n     height: 250px;\n     margin: 50px 0;\n     margin-left: 20px;\n}\n.sectionTwo .quote{\n     font-size: 36px;\n     font-style: inherit;\n}\n.sectionTwo .author{\n     font-size: 20px;\n     font-style: inherit;\n     color: gray;\n}\n.sectionTwo .circle div{\n     display: inline-block;\n     width: 15px;\n     height: 15px;\n     background: gray;\n     border-radius: 50%;\n     margin: 5px;\n}\n.circle{\n     position: absolute;\n     bottom: 0;\n     right:50%;\n}\n.sectionTwo .circle div:hover{\n     border: 2px solid coral;\n     background: white;\n}\n.sectionTwo .circle .activeCircle{\n     border: 2px solid coral;\n     background: white;\n}\n.sectionTwo .circle{\n     display: -webkit-box;\n     display: -ms-flexbox;\n     display: flex;\n     -webkit-box-pack: center;\n         -ms-flex-pack: center;\n             justify-content: center;\n}\n.slide-enter-active {\n    -webkit-animation: slideIn 1s;\n            animation: slideIn 1s;\n}\n.slide-leave-active {\n     -webkit-animation: slideOut 1s;\n             animation: slideOut 1s;\n}\n.slide-leave {\n     position: absolute;\n}\n.slide-leave-to {\n     position: absolute;\n}\n@-webkit-keyframes slideIn {\nfrom{-webkit-transform: translateX(2000px);transform: translateX(2000px);\n}\nto{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\n}\n@keyframes slideIn {\nfrom{-webkit-transform: translateX(2000px);transform: translateX(2000px);\n}\nto{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\n}\n@-webkit-keyframes slideOut {\nfrom{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\nto{-webkit-transform: translateX(-2000px);transform: translateX(-2000px);\n}\n}\n@keyframes slideOut {\nfrom{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\nto{-webkit-transform: translateX(-2000px);transform: translateX(-2000px);\n}\n}\n", ""]);
+exports.push([module.i, "\n.sectionOne{\n     display: -webkit-box;\n     display: -ms-flexbox;\n     display: flex;\n}\n.sectionOne .one{\n     background-image: url(" + escape(__webpack_require__(22)) + ");\n     background-size: 100% 100%;\n}\n.sectionOne .two{\n     padding: 2% 10%;\n\n     color: white;\n     font-family: 'Spectral', serif;\n     background-image: url(" + escape(__webpack_require__(23)) + ");\n}\nhr{\n     text-align: center;\n     background: coral;\n     width: 50px;\n     height: 2px;\n}\n.sectionOne .two h3{\n     text-align: center;\n     font-style: italic;\n     font-weight: lighter;\n}\n.sectionOne .two p span{\n     font-size: 70px;\n     float: left;\n     margin-top: -13%;\n     font-style: italic;\n     padding: 0 10px;\n     margin-right: 3%;\n     -webkit-box-sizing: border-box;\n             box-sizing: border-box;\n     height: 70px;\n     color: white;\n}\n.sectionOne .two p{\n     font-size: 20px;\n     color: gray;\n}\n.center{\n     text-align: center;\n}\n.sectionOne .two button{\n     text-align: center;\n     border: 2px solid coral;\n     border-radius: 5px;\n     background: rgba(0,0,0,0);\n     color: white;\n}\n.sectionTwo{\n     height: 250px;\n     margin: 50px 0;\n     margin-left: 20px;\n}\n.sectionTwo > div{\n     height: 500px;\n}\n.sectionTwo .quote{\n     font-size: 36px;\n     font-style: inherit;\n}\n.sectionTwo .author{\n     font-size: 20px;\n     font-style: inherit;\n     color: gray;\n}\n.sectionTwo .circle div{\n     display: inline-block;\n     width: 15px;\n     height: 15px;\n     background: gray;\n     border-radius: 50%;\n     margin: 5px;\n}\n.sectionTwo .circle div:hover{\n     border: 2px solid coral;\n     background: white;\n}\n.sectionTwo .circle .activeCircle{\n     border: 2px solid coral;\n     background: white;\n}\n.sectionTwo .circle{\n     display: -webkit-box;\n     display: -ms-flexbox;\n     display: flex;\n     margin: 50px;\n     -webkit-box-pack: center;\n         -ms-flex-pack: center;\n             justify-content: center;\n}\n.slide-enter-active {\n    -webkit-animation: slideIn 1s;\n            animation: slideIn 1s;\n}\n.slide-leave-active {\n     -webkit-animation: slideOut 1s;\n             animation: slideOut 1s;\n}\n.slide-leave {\n     position: absolute;\n}\n.slide-leave-to {\n     position: absolute;\n}\n@-webkit-keyframes slideIn {\nfrom{-webkit-transform: translateX(2000px);transform: translateX(2000px);\n}\nto{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\n}\n@keyframes slideIn {\nfrom{-webkit-transform: translateX(2000px);transform: translateX(2000px);\n}\nto{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\n}\n@-webkit-keyframes slideOut {\nfrom{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\nto{-webkit-transform: translateX(-2000px);transform: translateX(-2000px);\n}\n}\n@keyframes slideOut {\nfrom{-webkit-transform: translateX(0px);transform: translateX(0px);\n}\nto{-webkit-transform: translateX(-2000px);transform: translateX(-2000px);\n}\n}\n", ""]);
 
 // exports
 
@@ -56653,6 +56653,9 @@ exports.push([module.i, "\n.sectionOne{\n     display: -webkit-box;\n     displa
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
 //
 //
 //
@@ -56741,54 +56744,59 @@ var render = function() {
     _vm._m(0),
     _vm._v(" "),
     _c("section", { staticClass: "sectionTwo" }, [
-      _c("div", { staticClass: "row" }, [
-        _vm.citations.length
-          ? _c(
+      _vm.citations.length
+        ? _c("div", { staticClass: "d-flex align-items-start flex-column" }, [
+            _c(
               "div",
               { staticClass: "col" },
               [
                 _c(
                   "transition",
                   { attrs: { name: "slide" } },
-                  _vm._l(_vm.citations, function(citation, index) {
-                    return _vm.citations[index].show
-                      ? _c(
-                          "div",
-                          { key: citation.quote, staticClass: "animate" },
-                          [
-                            _c("p", { staticClass: "quote" }, [
-                              _vm._v('"' + _vm._s(citation.quote) + '"')
-                            ]),
-                            _vm._v(" "),
-                            _c("p", { staticClass: "author" }, [
-                              _vm._v(" - " + _vm._s(citation.author))
-                            ])
-                          ]
-                        )
-                      : _vm._e()
-                  })
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "circle" },
-                  _vm._l(_vm.citations, function(citation, index) {
-                    return _c("div", {
-                      key: index,
-                      class: { activeCircle: citation.show },
-                      on: {
-                        click: function($event) {
-                          _vm.showSlide(index)
-                        }
-                      }
+                  [
+                    _vm._l(_vm.citations, function(citation, index) {
+                      return [
+                        _vm.citations[index].show
+                          ? _c(
+                              "div",
+                              { key: citation.quote, staticClass: "animate" },
+                              [
+                                _c("p", { staticClass: "quote" }, [
+                                  _vm._v('"' + _vm._s(citation.quote) + '"')
+                                ]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "author" }, [
+                                  _vm._v(" - " + _vm._s(citation.author))
+                                ])
+                              ]
+                            )
+                          : _vm._e()
+                      ]
                     })
-                  })
+                  ],
+                  2
                 )
               ],
               1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col circle" },
+              _vm._l(_vm.citations, function(citation, index) {
+                return _c("div", {
+                  key: index,
+                  class: { activeCircle: citation.show },
+                  on: {
+                    click: function($event) {
+                      _vm.showSlide(index)
+                    }
+                  }
+                })
+              })
             )
-          : _vm._e()
-      ])
+          ])
+        : _vm._e()
     ])
   ])
 }

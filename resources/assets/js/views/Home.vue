@@ -16,22 +16,25 @@
     </section>
 
     <section class="sectionTwo">
-        <div class="row">
-            <div class="col" v-if="citations.length">
+        <div class="d-flex align-items-start flex-column" v-if="citations.length">
+            <div class="col" >
                 <transition name="slide">
-                    <div class="animate" v-for="(citation, index) in citations"
-                         :key="citation.quote"
-                         v-if="citations[index].show">
+                    <template v-for="(citation, index) in citations">
+                        <div class="animate" 
+                            :key="citation.quote"
+                            v-if="citations[index].show">
 
-                        <p class="quote">"{{citation.quote}}"</p>
-                        <p class="author"> - {{citation.author}}</p>
+                            <p class="quote">"{{citation.quote}}"</p>
+                            <p class="author"> - {{citation.author}}</p>
 
-                    </div>
+                        </div>
+                    </template>
                 </transition>
-                <div class="circle">
+                </div>
+                <div class="col circle">
                     <div v-for="(citation, index) in citations" :key="index" @click="showSlide(index)" :class="{'activeCircle': citation.show}"></div>
                 </div>
-            </div>
+            
         </div>
     </section>
     </div>
@@ -131,6 +134,9 @@
         margin: 50px 0;
         margin-left: 20px;
     }
+    .sectionTwo > div{
+        height: 500px;
+    }
     .sectionTwo .quote{
         font-size: 36px;
         font-style: inherit;
@@ -148,11 +154,6 @@
         border-radius: 50%;
         margin: 5px;
     }
-    .circle{
-        position: absolute;
-        bottom: 0;
-        right:50%;
-    }
     .sectionTwo .circle div:hover{
         border: 2px solid coral;
         background: white;
@@ -163,6 +164,7 @@
     }
     .sectionTwo .circle{
         display: flex;
+        margin: 50px;
         justify-content: center;
     }
     .slide-enter-active {
