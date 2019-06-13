@@ -54,16 +54,14 @@
                         if(response.data.success){
                             Auth.login(response.data);
                             this.$store.commit('user/Login');
-                            // localStorage.setItem('user_id', response.data.user_id);
-                            // localStorage.setItem('api_token', response.data.api_token);
-                            // localStorage.setItem('name', response.data.name);
                             this.$router.push('/');
                         }
-                        //console.log(response.data.api_token);
+                       // console.log(response.data.errors);
+                        this.$set(this.errors, 'error', response.data.errors);
                     })
                     .catch( (error) => {
                         this.$set(this.errors, 'error', error.response.data.errors);
-                        console.log(this.errors.error);
+                       // console.log(this.errors.error);
                     });
             }
         }

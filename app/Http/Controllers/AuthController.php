@@ -24,11 +24,19 @@ class AuthController extends Controller
         $user = new User($request->all());
         $user->password = bcrypt($request->password);
         $user->save();
+        if($user && Hash::check($request->password, $user->password)){
 
-        return response()->json([
-           'success'=>true
-        ]);
-        return response()->json($request);
+            $user->api_token = str_random(60);
+            $user->save();
+
+            return response()->json([
+                'success'=>true,
+                'user_id' => $user->id,
+                'api_token' => $user->api_token,
+                'name' => $user->name
+            ]);
+        }
+       
 
     }
 

@@ -22,14 +22,13 @@ try {
 
 import Vue from 'vue';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPhone, faEnvelope, faHome, faGlobe, faSignOutAlt  } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faHome, faGlobe, faSignOutAlt, faSignInAlt   } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 
-import VueCookies from 'vue-cookies';
-Vue.use(VueCookies);
 
-library.add(faHome, faPhone, faEnvelope, faGlobe, faSignOutAlt);
+
+library.add(faHome, faPhone, faEnvelope, faGlobe, faSignOutAlt, faSignInAlt);
 
 
 

@@ -6,11 +6,20 @@ export default {
             user_id:null,
             api_token:null,
             name:null
+        },
+        Registered:{
+            registered:false,
+            name:null,
+            email:null,
+            user_id:null
         }
     },
     getters: {
         auth(state) {
             return state.Auth;
+        },
+        registered(state){
+            return state.Registered;
         }
     },
     mutations: {
@@ -22,6 +31,10 @@ export default {
                 state.Auth.user_id !== null &&
                 state.Auth.api_token !== null &&
                 state.Auth.name !== null;
+        },
+        Register(state){
+            state.Registered.name = localStorage.getItem('name');
+
         }
     },
     actions: {

@@ -8,10 +8,10 @@
                     <router-link v-for="(item, index) in menu"
                                  :key="item.path"
                                  :to="item.path"
-                                 v-if="item.auth === 'both'"
+                                 v-if="item.auth === 'both' || item.auth === auth.login"
                                  tag="li"
                                  exact
-                    >
+                                 class="mainNav">
                         <a>{{ item.title }}</a>
                     </router-link>
 
@@ -21,9 +21,8 @@
                                  v-if="item.auth === auth.login"
                                  tag="li"
                                  exact
-                                 class="navAuth"
-                    >
-                        <a>{{ item.title }}</a>
+                                 class="navAuth">
+                    <a>{{ item.title }}</a>
                     </router-link>
 
                     <li v-if="auth.login"
@@ -32,10 +31,8 @@
                                  :to="item.path"
                                  tag="li"
                                  :key="item.title"
-                                class="logout"
-
-                    >
-                        <span><font-awesome-icon icon="sign-out-alt" />{{item.title}}</span>
+                                class="logout">
+                        <a><font-awesome-icon icon="sign-out-alt" />{{item.title}}</a>
                     </li>
 
 
@@ -94,9 +91,13 @@
 <style>
     .logout{
         cursor:pointer;
+        float: right;
     }
     .navAuth{
         float: right;
+    }
+    .mainNav{
+        float: left;
     }
     nav>div{
         border: 2px solid gainsboro;

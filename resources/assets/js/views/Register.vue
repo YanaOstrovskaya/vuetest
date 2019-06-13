@@ -40,6 +40,7 @@
 <script>
     import FormError from '../components/FormError';
     import {mapState} from 'vuex';
+    import Auth from '../helpers/Auth';
     export default{
         components: {
             FormError
@@ -53,22 +54,19 @@
                         password:'',
                         password_confirmation:''
                     },
-                errors:[]
+                errors:[],
+                success:''
             }
         },
         methods:{
             onRegister(){
                 axios.post('/api/register', this.form)
                     .then((response) =>{
-                        this.$set(this.errors, 'error', []);
-                        this.form.name = '';
-                        this.form.email = '';
-                        this.form.password = '';
-                        this.form.password_confirmation = '';
                         if(response.data.success){
+                            Auth.login(response.data);
+                            this.$store.commit('user/Login');
                             this.$router.push('/');
                         }
-                        //console.log(response.data);
                     })
                     .catch( (error) => {
                         this.$set(this.errors, 'error', error.response.data.errors);

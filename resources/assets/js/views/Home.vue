@@ -29,18 +29,13 @@
                     </div>
                 </transition>
                 <div class="circle">
-                    <div v-for="(citation, index) in citations" @click="showSlide(index)" :class="{'activeCircle': citation.show}"></div>
-
-
+                    <div v-for="(citation, index) in citations" :key="index" @click="showSlide(index)" :class="{'activeCircle': citation.show}"></div>
                 </div>
-
             </div>
         </div>
     </section>
     </div>
 </template>
-
-
 
 <script>
     export default {
@@ -55,12 +50,11 @@
                 activeIndex: 0,
             }
     },
-
         methods: {
             showSlide(index) {
-                this.citations[this.activeIndex].show = false
-                this.citations[index].show = true
-                this.activeIndex = index
+                this.citations[this.activeIndex].show = false;
+                this.citations[index].show = true;
+                this.activeIndex = index;
             }
         },
 
@@ -133,7 +127,8 @@
         color: white;
     }
     .sectionTwo{
-        margin: 7% 0;
+        height: 250px;
+        margin: 50px 0;
         margin-left: 20px;
     }
     .sectionTwo .quote{
@@ -152,6 +147,11 @@
         background: gray;
         border-radius: 50%;
         margin: 5px;
+    }
+    .circle{
+        position: absolute;
+        bottom: 0;
+        right:50%;
     }
     .sectionTwo .circle div:hover{
         border: 2px solid coral;
